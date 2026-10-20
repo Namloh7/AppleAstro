@@ -1,0 +1,35 @@
+---
+const {heading , description , smallDescription , imgSource ,txtColor, bgColor} = Astro.props;
+
+---
+<section class = "productCards" style={`color:${txtColor}; background-color:${bgColor}`}>
+    <div class="productCards--content">
+          <h1 class="primaryHeading">{heading}</h1>
+          <h3 class="secondaryHeading">{description}</h3>
+          <h4 class = "plain-text">{smallDescription}</h4>
+          <div class="buttonRow">
+            <button class="button--fill">Více</button>
+            <button class="button--outline">Koupit</button>
+          </div>
+          <img
+            src={imgSource}
+            alt="image"
+            class="productCards__image"
+          />
+    </div>
+</section>
+
+<style>
+    .productCards {
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-block: 50px;
+}
+</style>
